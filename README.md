@@ -30,23 +30,12 @@ minikube start --driver=docker
 After starting Minikube, use the following command to ensure the cluster is running:
 -kubectl cluster-info
 
--You should see output like:
-Kubernetes control plane is running at https://192.168.49.2:8443
-CoreDNS is running at https://192.168.49.2:8443/api/v1/namespaces/kube-system/services/kube-dns
-
--To check the available nodes:
-kubectl get nodes
-
-You should see something like:
-
-NAME       STATUS   ROLES           AGE   VERSION
-minikube   Ready    control-plane   2m    v1.27.0
-If the status is Ready, you're all set to proceed to the next step! 🎉
+To check the available nodes:
+-kubectl get nodes
 
 3️⃣ Open Minikube Dashboard (Optional)
 If you want a graphical interface to monitor the cluster:
 minikube dashboard
-This will open a web page displaying the cluster information.
 
 🔥Next Steps
 
@@ -63,12 +52,6 @@ kubectl apply -f deployment.yaml
 📌 Check that the Pods are running:
 kubectl get pods
 
-If everything is correct, you should see output like:
-
-NAME                        READY   STATUS    RESTARTS   AGE
-my-app-xxxxxx-yyyyy         1/1     Running   0          30s
-my-app-xxxxxx-zzzzz         1/1     Running   0          30s
-
 ✅ 2️⃣ Create a Service to Access the Application
 
 By default, Pods are not accessible from outside the Cluster, so we need to create a Service.
@@ -79,12 +62,8 @@ By default, Pods are not accessible from outside the Cluster, so we need to crea
 
 kubectl apply -f service.yaml
 📌 Check that the Service is running:
+-kubectl get services
 
-kubectl get services
-You should see output like:
-
-NAME              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
-my-app-service   NodePort    10.108.226.95    <none>        80:30007/TCP   10s
 ✅ 3️⃣ Open the Application in a Browser
 
 📌 Run the following command to get the Minikube IP address:
