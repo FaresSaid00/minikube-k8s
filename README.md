@@ -71,6 +71,6 @@ kubectl apply -f service.yaml
 minikube ip
 You will get an IP address like 192.168.49.2 (it may vary).
 
-📌 Open your browser and enter: http://<minikube-ip>:30007
+📌 Open your browser and enter: http://< ip address of minikube>:30007
 
 🚀 If the Nginx page appears, the project is successfully running! 🎉
